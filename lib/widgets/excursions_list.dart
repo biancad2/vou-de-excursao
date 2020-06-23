@@ -27,15 +27,7 @@ class ExcursionsList extends StatelessWidget {
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.5)),
-              GestureDetector(
-                onTap: () => print('See all'),
-                child: Text('Ver Todos',
-                    style: TextStyle(
-                        color: Color(0xFF2ECCFA),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 1)),
-              )
+            
             ],
           ),
         ),

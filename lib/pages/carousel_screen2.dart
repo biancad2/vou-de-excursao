@@ -32,8 +32,11 @@ class _CarouselScreenState extends State<CarouselScreen> {
       style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
     );
   }
+final descTextStyle = TextStyle(
+  color: Colors.grey[600],
+  fontFamily: 'Roboto',
 
-
+);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,9 +67,12 @@ class _CarouselScreenState extends State<CarouselScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
-                            child: Text("R\$" + widget.destination.price.toString(), style: GoogleFonts.roboto(
-                                  textStyle: TextStyle(
-                                      fontSize: 20, fontWeight: FontWeight.w600))),
+                            child: Text(
+                                "R\$" + widget.destination.price.toString(),
+                                style: GoogleFonts.roboto(
+                                    textStyle: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w600))),
                           ),
                           Row(
                             children: <Widget>[
@@ -81,7 +87,6 @@ class _CarouselScreenState extends State<CarouselScreen> {
                                   style: TextStyle(color: Colors.grey)),
                             ],
                           ),
-                          
                         ],
                       ),
                     ),
@@ -200,54 +205,145 @@ class _CarouselScreenState extends State<CarouselScreen> {
                           cardItem(),
                           Divider(),
                           cardItem(),
-
-                           Container(
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.only(right: 10),
-                                child: GestureDetector(
-                                  onTap: () => print('See all'),
-                                  child: Text('VER MAIS',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Colors.blue,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      )),
-                                ),
+                          Container(
+                            width: double.infinity,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: GestureDetector(
+                                onTap: () => print('See all'),
+                                child: Text('VER MAIS',
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    )),
                               ),
                             ),
+                          ),
                         ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 15),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(0, 20, 15, 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Comodidades",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.left,
+                            ),
+                            Padding(padding: EdgeInsets.only(bottom: 15)),
+                           
+
+                           Row(
+                             
+                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                             children: <Widget>[
+                               Column(
+                                 mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                 children: [
+                                   Icon(Icons.wifi, size: 16,  color: Colors.grey[600],),
+                                   Padding(padding: EdgeInsets.only(left: 5)),
+                                   Text("Ônibus com wi-fi", style: descTextStyle,),
+                                 ],
+                               ),
+                                SizedBox(
+                              height: 15,
+                            ),
+                                Row(
+                                 children: [
+                                   Icon(Icons.fastfood, size: 16,  color: Colors.grey[600],),
+                                   Padding(padding: EdgeInsets.only(left: 5)),
+                                   Text("Café da manhã", style: descTextStyle),
+                                 ],
+                               ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                             Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                 children: [
+                                   Icon(Icons.beach_access, size: 16,  color: Colors.grey[600],),
+                                   Padding(padding: EdgeInsets.only(left: 5)),
+                                   Text("Passeio pelas praias", style: descTextStyle),
+                                 ],
+                               ),
+                                SizedBox(
+                              height: 15,
+                            ),
+                                Row(
+                                 children: [
+                                   Icon(Icons.hotel, size: 16,  color: Colors.grey[600],),
+                                   Padding(padding: EdgeInsets.only(left: 5)),
+                                   Text("Hospedagem incluida", style: descTextStyle ),
+                                 ],
+                               ),
+                              ],
+                            ),
+                               
+                             ],
+                           ),
+                          
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              Container(
-                padding: EdgeInsets.only(left: 5),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Comodidades",
-                  style: TextStyle(color: Colors.grey, fontSize: 15),
-                  textAlign: TextAlign.left,
-                ),
+             
+              Padding(padding: EdgeInsets.only(bottom: 20)),
+              RaisedButton(
+                onPressed: () {},
+                color: Colors.blue,
+                child: Container(
+                    color: Colors.blue,
+                    width: 300,
+                    height: 50,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Reservar",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    )),
               ),
               Padding(padding: EdgeInsets.only(bottom: 20)),
-               RaisedButton(onPressed: (){},
-               
-               color: Colors.blue,
-        child: Container(color: Colors.blue, width: 300, height: 50, alignment: Alignment.center,
-        child: Text("Reservar", style: TextStyle(color: Colors.white,),textAlign: TextAlign.center,)),
-        
-        ),
-        Padding(padding: EdgeInsets.only(bottom: 20)),
-        RaisedButton(onPressed: (){},
-               
-               color: Colors.blue,
-        child: Container(color: Colors.blue, width: 300, height: 50, alignment: Alignment.center,
-        child: Text("Enviar mensagem", style: TextStyle(color: Colors.white,),textAlign: TextAlign.center,)),
-        
-        ),
+              RaisedButton(
+                onPressed: () {},
+                color: Colors.blue,
+                child: Container(
+                    color: Colors.blue,
+                    width: 300,
+                    height: 50,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Enviar mensagem",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    )),
+              ),
+              Padding(padding: EdgeInsets.only(bottom: 20)),
             ],
           ),
         ),
@@ -292,7 +388,6 @@ Widget cardItem() {
           child: Text(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ex sem. Praesent elit dui, iaculis at interdum eu, rutrum et mi. "),
         ),
-       
       ],
     ),
   );
